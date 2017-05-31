@@ -7,7 +7,7 @@
 	<key>CFBundleName</key>
 	<string>StudioGhibli</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.sapientrazorfish.studioghibli</string>
+	<string>com.sapientrazorfish.referencearchitecture.studioghibli</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

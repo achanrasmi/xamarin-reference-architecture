@@ -7,6 +7,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using StudioGhibli.Core;
 
 namespace StudioGhibli.Droid
 {
@@ -21,7 +22,7 @@ namespace StudioGhibli.Droid
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
-
+			AppServices.Init();
 			LoadApplication(new App());
 		}
 	}

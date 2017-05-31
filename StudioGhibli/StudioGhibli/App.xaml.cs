@@ -7,7 +7,6 @@ namespace StudioGhibli
 		public App()
 		{
 			InitializeComponent();
-
 			MainPage = new StudioGhibliPage();
 		}
 
