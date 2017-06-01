@@ -36,7 +36,7 @@
     <Compile Include="Model\Vehicle.cs" />
     <Compile Include="Services\APIService.cs" />
     <Compile Include="Services\IAPIService.cs" />
-    <Compile Include="AppServices.cs" />
+    <Compile Include="AppInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />

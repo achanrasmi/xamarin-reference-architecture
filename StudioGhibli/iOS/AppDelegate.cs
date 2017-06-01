@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using ReferenceArchitecture.Core.Infrastructure;
 using StudioGhibli.Core;
 using UIKit;
 
@@ -14,10 +15,17 @@ namespace StudioGhibli.iOS
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
 			global::Xamarin.Forms.Forms.Init();
-			AppServices.Init();
+			AppInitializer.Init(RegisterNativeDependencies());
 			LoadApplication(new App());
 
 			return base.FinishedLaunching(app, options);
+		}
+
+		IContainer RegisterNativeDependencies()
+		{
+			var container = new SimpleIoCContainer();
+			//register native dependencies here
+			return container;
 		}
 	}
 }

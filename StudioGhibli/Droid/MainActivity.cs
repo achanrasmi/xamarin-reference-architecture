@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 using Android.App;
 using Android.Content;
@@ -8,6 +8,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using StudioGhibli.Core;
+using ReferenceArchitecture.Core.Infrastructure;
 
 namespace StudioGhibli.Droid
 {
@@ -22,8 +23,15 @@ namespace StudioGhibli.Droid
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
-			AppServices.Init();
+			AppInitializer.Init(RegisterNativeDependencies());
 			LoadApplication(new App());
+		}
+
+		IContainer RegisterNativeDependencies()
+		{
+			var container = new SimpleIoCContainer();
+			//register native dependencies here
+			return container;
 		}
 	}
 }
