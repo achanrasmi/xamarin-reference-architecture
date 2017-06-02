@@ -5,128 +5,88 @@ using System.Threading.Tasks;
 
 namespace StudioGhibli.UnitTest.Services
 {
-	/// <summary>
-	/// API Service test.
-	/// </summary>
 	[TestFixture]
 	public class APIServiceTest
 	{
 		IAPIService apiService;
 
-		/// <summary>
-		/// Setup before each test
-		/// </summary>
 		[SetUp]
 		public void Setup()
 		{
 			apiService = apiService ?? new APIService();
 		}
 
-		/// <summary>
-		/// Tests the get films returns not null.
-		/// </summary>
-		/// <returns>The get films returns not null.</returns>
+		[TestFixtureTearDown]
+		public void TestFixtureTearDown()
+		{
+			apiService = null;
+		}
+
 		[Test]
-		public async Task TestGetFilmsReturnsNotNull()
+		public async Task ShouldReturnNotNullWhenGettingFilms()
 		{
 			var result = await apiService.GetFilms();
 			Assert.IsNotNull(result);
 		}
 
-		/// <summary>
-		/// Tests the get films returns not empty.
-		/// </summary>
-		/// <returns>The get films returns not empty.</returns>
 		[Test]
-		public async Task TestGetFilmsReturnsNotEmpty()
+		public async Task ShouldReturnNotEmptyWhenGettingFilms()
 		{
 			var result = await apiService.GetFilms();
 			Assert.IsNotEmpty(result);
 		}
 
-		/// <summary>
-		/// Tests the get people returns not null.
-		/// </summary>
-		/// <returns>The get people returns not null.</returns>
 		[Test]
-		public async Task TestGetPeopleReturnsNotNull()
+		public async Task ShouldReturnNotNullWhenGettingPeople()
 		{
 			var result = await apiService.GetPeople();
 			Assert.IsNotNull(result);
 		}
 
-		/// <summary>
-		/// Tests the get people returns not empty.
-		/// </summary>
-		/// <returns>The get people returns not empty.</returns>
 		[Test]
-		public async Task TestGetPeopleReturnsNotEmpty()
+		public async Task ShouldReturnNotEmptyWhenGettingPeople()
 		{
 			var result = await apiService.GetPeople();
 			Assert.IsNotEmpty(result);
 		}
 
-		/// <summary>
-		/// Tests the get locations returns not null.
-		/// </summary>
-		/// <returns>The get locations returns not null.</returns>
 		[Test]
-		public async Task TestGetLocationsReturnsNotNull()
+		public async Task ShouldReturnNotNullWhenGettingLocations()
 		{
 			var result = await apiService.GetLocations();
 			Assert.IsNotNull(result);
 		}
 
-		/// <summary>
-		/// Tests the get locations returns not empty.
-		/// </summary>
-		/// <returns>The get locations returns not empty.</returns>
 		[Test]
-		public async Task TestGetLocationsReturnsNotEmpty()
+		public async Task ShouldReturnNotEmptyWhenGettingLocations()
 		{
 			var result = await apiService.GetLocations();
 			Assert.IsNotEmpty(result);
 		}
 
-		/// <summary>
-		/// Tests the get vehicles returns not null.
-		/// </summary>
-		/// <returns>The get vehicles returns not null.</returns>
 		[Test]
-		public async Task TestGetVehiclesReturnsNotNull()
+		public async Task ShouldReturnNotNullWhenGettingVehicles()
 		{
 			var result = await apiService.GetVehicles();
 			Assert.IsNotNull(result);
 		}
 
-		/// <summary>
-		/// Tests the get vehicles returns not empty.
-		/// </summary>
-		/// <returns>The get vehicles returns not empty.</returns>
 		[Test]
-		public async Task TestGetVehiclesReturnsNotEmpty()
+		public async Task ShouldReturnNotEmptyWhenGettingVehicles()
 		{
 			var result = await apiService.GetVehicles();
 			Assert.IsNotEmpty(result);
 		}
 
-		/// <summary>
-		/// Tests the get species returns not null.
-		/// </summary>
-		/// <returns>The get species returns not null.</returns>
 		[Test]
-		public async Task TestGetSpeciesReturnsNotNull()
+		public async Task ShouldReturnNotNullWhenGettingSpecies()
 		{
 			var result = await apiService.GetSpecies();
 			Assert.IsNotNull(result);
 		}
 
-		/// <summary>
-		/// Tests the get species returns not empty.
-		/// </summary>
-		/// <returns>The get species returns not empty.</returns>
 		[Test]
-		public async Task TestGetSpeciesReturnsNotEmpty()
+		public async Task ShouldReturnNotEmptyWhenGettingSpecies()
 		{
 			var result = await apiService.GetSpecies();
 			Assert.IsNotEmpty(result);

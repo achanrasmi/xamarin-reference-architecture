@@ -3,13 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1B0D5ADD-EB43-48A1-B641-53BA3C40E932}</ProjectGuid>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{6DCF9865-87D0-465E-805D-DD32AD0B0993}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>ReferenceArchitecture.Core</RootNamespace>
-    <AssemblyName>ReferenceArchitecture.Core</AssemblyName>
+    <RootNamespace>ReferenceArchitecture.UnitTest</RootNamespace>
+    <AssemblyName>ReferenceArchitecture.UnitTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,25 +25,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\BaseNetworkService.cs" />
-    <Compile Include="Logging\ILogger.cs" />
-    <Compile Include="Logging\SimpleDebugLogger.cs" />
-    <Compile Include="Logging\ILogWriter.cs" />
-    <Compile Include="Logging\SimpleDebugLogEvent.cs" />
-    <Compile Include="Logging\LogLevel.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-    <Folder Include="Logging\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\portable-net45+win8+wpa81+wp8\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SimpleDebugLoggerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\ReferenceArchitecture.Core\ReferenceArchitecture.Core.csproj">
+      <Project>{1B0D5ADD-EB43-48A1-B641-53BA3C40E932}</Project>
+      <Name>ReferenceArchitecture.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

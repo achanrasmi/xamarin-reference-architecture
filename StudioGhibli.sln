@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudioGhibli.Core", "Studio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudioGhibli.UnitTest", "StudioGhibli\StudioGhibli.UnitTest\StudioGhibli.UnitTest.csproj", "{F8AC0BAA-68E2-44F7-B1EC-ADE469CFC6F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReferenceArchitecture.UnitTest", "ReferenceArchitecture\ReferenceArchitecture.UnitTest\ReferenceArchitecture.UnitTest.csproj", "{6DCF9865-87D0-465E-805D-DD32AD0B0993}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,18 @@ Global
 		{F8AC0BAA-68E2-44F7-B1EC-ADE469CFC6F0}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{F8AC0BAA-68E2-44F7-B1EC-ADE469CFC6F0}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{F8AC0BAA-68E2-44F7-B1EC-ADE469CFC6F0}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{6DCF9865-87D0-465E-805D-DD32AD0B0993}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DCF9865-87D0-465E-805D-DD32AD0B0993}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DCF9865-87D0-465E-805D-DD32AD0B0993}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DCF9865-87D0-465E-805D-DD32AD0B0993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DCF9865-87D0-465E-805D-DD32AD0B0993}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{6DCF9865-87D0-465E-805D-DD32AD0B0993}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{6DCF9865-87D0-465E-805D-DD32AD0B0993}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{6DCF9865-87D0-465E-805D-DD32AD0B0993}.Release|iPhone.Build.0 = Release|Any CPU
+		{6DCF9865-87D0-465E-805D-DD32AD0B0993}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{6DCF9865-87D0-465E-805D-DD32AD0B0993}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{6DCF9865-87D0-465E-805D-DD32AD0B0993}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{6DCF9865-87D0-465E-805D-DD32AD0B0993}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1B0D5ADD-EB43-48A1-B641-53BA3C40E932} = {533BDDA7-7765-4C3A-928A-9BE8B3FEFAF7}
@@ -137,5 +151,6 @@ Global
 		{C73666FD-57E3-4EC5-8D4B-C6C5F7628527} = {30579A09-9F94-449E-9EE7-5B366A26FFBA}
 		{C5B7FD07-EF9D-4155-A7B2-6B24A2EBDAA0} = {30579A09-9F94-449E-9EE7-5B366A26FFBA}
 		{F8AC0BAA-68E2-44F7-B1EC-ADE469CFC6F0} = {30579A09-9F94-449E-9EE7-5B366A26FFBA}
+		{6DCF9865-87D0-465E-805D-DD32AD0B0993} = {533BDDA7-7765-4C3A-928A-9BE8B3FEFAF7}
 	EndGlobalSection
 EndGlobal

@@ -1,9 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 using Foundation;
-using ReferenceArchitecture.Core.Infrastructure;
+using ReferenceArchitecture.Core.Logging;
+using ReferenceArchitecture.iOS.Logging;
+using SimpleInjector;
 using StudioGhibli.Core;
 using UIKit;
 
@@ -21,10 +20,11 @@ namespace StudioGhibli.iOS
 			return base.FinishedLaunching(app, options);
 		}
 
-		IContainer RegisterNativeDependencies()
+		Container RegisterNativeDependencies()
 		{
-			var container = new SimpleIoCContainer();
+			var container = new Container();
 			//register native dependencies here
+			container.RegisterSingleton<ILogWriter<SimpleDebugLogEvent>, SimpleDebugWriter>();
 			return container;
 		}
 	}

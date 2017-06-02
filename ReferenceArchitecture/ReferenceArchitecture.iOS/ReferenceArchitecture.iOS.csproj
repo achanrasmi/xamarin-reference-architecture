@@ -47,9 +47,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Logging\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Logging\SimpleDebugWriter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReferenceArchitecture.Core\ReferenceArchitecture.Core.csproj">
+      <Project>{1B0D5ADD-EB43-48A1-B641-53BA3C40E932}</Project>
+      <Name>ReferenceArchitecture.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

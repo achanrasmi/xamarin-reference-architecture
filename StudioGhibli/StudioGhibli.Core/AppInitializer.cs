@@ -1,16 +1,17 @@
-using System;
-using ReferenceArchitecture.Core.Infrastructure;
 using ReferenceArchitecture.Core.Logging;
+using SimpleInjector;
 using StudioGhibli.Core.Services;
 
 namespace StudioGhibli.Core
 {
 	public static class AppInitializer
 	{
-		public static void Init(IContainer container)
+		public static void Init(Container container)
 		{
-			container.Register<IAPIService, APIService>();
-			container.Register<ILogger, SimpleDebugLogger>();
+			container.RegisterSingleton<IAPIService, APIService>();
+			container.RegisterSingleton<ILogger, SimpleDebugLogger>();
+
+			container.Verify();
 		}
 	}
 }

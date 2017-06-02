@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace ReferenceArchitecture.Core.Logging
 {
 	/// <summary>
@@ -6,16 +7,13 @@ namespace ReferenceArchitecture.Core.Logging
 	/// </summary>
 	public class SimpleDebugLogger : ILogger
 	{
-		enum LogLevel
-		{
-			V,
-			D,
-			I,
-			W,
-			E
-		}
+		readonly ILogWriter<SimpleDebugLogEvent> writer;
 
-		//TODO: Implement saving logs to file
+		public SimpleDebugLogger(ILogWriter<SimpleDebugLogEvent> writer)
+		{
+			this.writer = writer;
+			writer.CreateFile();
+		}
 
 		public void Verbose(string tag, string message, Exception exception = null)
 		{
@@ -47,6 +45,8 @@ namespace ReferenceArchitecture.Core.Logging
 			System.Diagnostics.Debug.WriteLine($"{logLevel.ToString().ToUpperInvariant()}: {tag} - {message}");
 
 			if (ex != null) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
+
+			writer.WriteToFile(new SimpleDebugLogEvent(logLevel, tag, message, ex));
 		}
 	}
 }

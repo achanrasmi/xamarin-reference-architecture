@@ -1,14 +1,11 @@
-using System;
 
 using Android.App;
-using Android.Content;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using ReferenceArchitecture.Core.Logging;
+using ReferenceArchitecture.Droid.Logging;
+using SimpleInjector;
 using StudioGhibli.Core;
-using ReferenceArchitecture.Core.Infrastructure;
 
 namespace StudioGhibli.Droid
 {
@@ -27,10 +24,11 @@ namespace StudioGhibli.Droid
 			LoadApplication(new App());
 		}
 
-		IContainer RegisterNativeDependencies()
+		Container RegisterNativeDependencies()
 		{
-			var container = new SimpleIoCContainer();
+			var container = new Container();
 			//register native dependencies here
+			container.RegisterSingleton<ILogWriter<SimpleDebugLogEvent>, SimpleDebugWriter>();
 			return container;
 		}
 	}
