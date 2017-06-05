@@ -15,13 +15,16 @@ namespace StudioGhibli.Core.Services
 	{
 		public override string BaseAddress => "https://ghibliapi.herokuapp.com";
 
-		public override JsonSerializerSettings JsonSettings => new JsonSerializerSettings
+		public APIService()
 		{
-			ContractResolver = new DefaultContractResolver
+			JsonSettings = new JsonSerializerSettings
 			{
-				NamingStrategy = new SnakeCaseNamingStrategy(true, false)
-			}
-		};
+				ContractResolver = new DefaultContractResolver
+				{
+					NamingStrategy = new SnakeCaseNamingStrategy(true, false)
+				}
+			};
+		}
 
 		public Task<IEnumerable<Film>> GetFilms()
 		{

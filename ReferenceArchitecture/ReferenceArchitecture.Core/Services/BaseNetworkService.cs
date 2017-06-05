@@ -8,7 +8,7 @@ namespace ReferenceArchitecture.Core.Services
 	/// <summary>
 	/// Base network service.
 	/// </summary>
-	public abstract class BaseNetworkService
+	public abstract class BaseNetworkService : IDisposable
 	{
 		/// <summary>
 		/// Gets the base address.
@@ -20,7 +20,7 @@ namespace ReferenceArchitecture.Core.Services
 		/// Gets the json settings.
 		/// </summary>
 		/// <value>The json settings.</value>
-		public abstract JsonSerializerSettings JsonSettings { get; }
+		public JsonSerializerSettings JsonSettings { get; protected set; }
 
 		readonly HttpClient client;
 
@@ -50,5 +50,29 @@ namespace ReferenceArchitecture.Core.Services
 
 		// Helper method to apply settings if they exist
 		T Deserialize<T>(string json) => JsonSettings != null ? JsonConvert.DeserializeObject<T>(json, JsonSettings) : JsonConvert.DeserializeObject<T>(json);
+
+		#region IDisposable Support
+		bool disposedValue; // To detect redundant calls
+
+		protected virtual void Dispose(bool disposing)
+		{
+			if (!disposedValue)
+			{
+				if (disposing)
+				{
+					client.Dispose();
+				}
+
+				disposedValue = true;
+			}
+		}
+
+		// This code added to correctly implement the disposable pattern.
+		public void Dispose()
+		{
+			// Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+			Dispose(true);
+		}
+		#endregion
 	}
 }
